@@ -30,15 +30,23 @@ export class FaceSnap implements OnInit {
 
   onSnap(): void {
     if (this.snapped === "") {
-      this.snaps++;
-      this.snapped = "snapped";
-      this.snappedContent = "Oops, unSnap !"
+      this.snap();
     } else {
       if (this.snaps > 0) {
-        this.snaps--;
-        this.snapped = "";
-        this.snappedContent = "Oh Snap !";
+        this.unSnap();
       }
     }
+  }
+
+  unSnap() {
+    this.snaps--;
+    this.snapped = "";
+    this.snappedContent = "Oh Snap !";
+  }
+
+  snap() {
+    this.snaps++;
+    this.snapped = "snapped";
+    this.snappedContent = "Oops, unSnap !"
   }
 }
