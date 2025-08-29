@@ -28,11 +28,11 @@ export class FaceSnap implements OnInit {
     this.snapped = "";
   };
 
-  onAddSnap(): void {
+  onSnap(): void {
     if (this.snapped === "") {
       this.snaps++;
       this.snapped = "snapped";
-      this.snappedContent = "Oops, un Snap !"
+      this.snappedContent = "Oops, unSnap !"
     } else {
       if (this.snaps > 0) {
         this.snaps--;

@@ -4,7 +4,7 @@
     <p>{{ description }}</p>
     <p>FaceSnap créée le {{ createdAt }}</p>
     <p>
-        <button (click)="onAddSnap()" [ngClass]="snapped">{{snappedContent}}</button>
+        <button (click)="onSnap()" [ngClass]="snapped">{{snappedContent}}</button>
         🤌 {{ snaps }}
     </p>
 </div>
