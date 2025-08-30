@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { FaceSnap } from './face-snap/face-snap';
+import { FaceSnapComponent } from './face-snap/face-snap';
 
 export const routes: Routes = [
     {
         path: 'facesnap',
-        component: FaceSnap
+        component: FaceSnapComponent
     },
     {
         path: '',
-        component: FaceSnap,
+        component: FaceSnapComponent,
         pathMatch: 'full'
     }
 ];
