@@ -1,5 +1,4 @@
 <!-- <router-outlet /> -->
-
-<app-face-snap [faceSnap]="mySnap" />
-<app-face-snap [faceSnap]="mySnap2" />
-<app-face-snap [faceSnap]="mySnap3" />
+@for(myFaceSnap of myFaceSnaps; track myFaceSnap.title){
+<app-face-snap [faceSnap]="myFaceSnap" />
+}
