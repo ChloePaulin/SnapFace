@@ -1,4 +1,12 @@
 <!-- <router-outlet /> -->
-@for(myFaceSnap of myFaceSnaps; track myFaceSnap.title){
-<app-face-snap [faceSnap]="myFaceSnap" />
+ <div class="content">
+@for(snap of displayedSnaps; track snap.title){
+<app-face-snap [faceSnap]="snap" />
 }
+</div>
+<app-footer
+  [totalItems]="totalItems"
+  [pageSize]="pageSize"
+  [currentPage]="currentPage"
+  (pageChange)="onPageChanged($event)">
+</app-footer>
