@@ -3,7 +3,7 @@
         <h2>{{ faceSnap.title | titlecase }}</h2>
         <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
         <p>{{ faceSnap.description }}</p>
-        <p>FaceSnap créée le {{ faceSnap.createdAt | date:'d/M/yyyy' }}</p>
+        <p>FaceSnap créée le {{ faceSnap.createdAt | date:'dd/MM/yy à hh:mm' }}</p>
         <p>@if(faceSnap.location){
             Localisation : {{faceSnap.location}}
             } @else{

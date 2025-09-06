@@ -1,0 +1,10 @@
+<app-header />
+<main>
+<div class="content">
+    @for(snap of displayedSnaps; track snap.title){
+    <app-face-snap [faceSnap]="snap" />
+    }
+</div>
+</main>
+<app-footer [totalItems]="totalItems" [pageSize]="pageSize" [currentPage]="currentPage"
+    (pageChange)="onPageChanged($event)" />
