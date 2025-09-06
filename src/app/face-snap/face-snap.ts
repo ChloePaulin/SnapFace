@@ -2,6 +2,7 @@ import { DatePipe, NgClass, TitleCasePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
 import { NgStyle } from "@angular/common";
+import { FaceSnapsService } from '../services/face-snaps-service';
 
 @Component({
   selector: 'app-face-snap',
@@ -15,6 +16,8 @@ export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
   snapped!: string;
   snappedContent!: string;
+
+  constructor(private faceSnapService:FaceSnapsService){};
 
   ngOnInit(): void {
     this.snappedContent = "Oh Snap !";
@@ -32,13 +35,13 @@ export class FaceSnapComponent implements OnInit {
   }
 
   unSnap() {
-    this.faceSnap.removeSnaps();
+    this.faceSnapService.unsnapFaceSnapById(this.faceSnap.id);
     this.snapped = "";
     this.snappedContent = "Oh Snap !";
   }
 
   snap() {
-    this.faceSnap.addSnaps();
+    this.faceSnapService.snapFaceSnapById(this.faceSnap.id);
     this.snapped = "snapped";
     this.snappedContent = "Oops, unSnap !"
   }
