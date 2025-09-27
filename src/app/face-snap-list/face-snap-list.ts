@@ -3,12 +3,11 @@ import { PageEvent } from '@angular/material/paginator';
 import { FaceSnap } from '../models/face-snap';
 import { Footer } from "../footer/footer";
 import { FaceSnapComponent } from "../face-snap/face-snap";
-import { Header } from "../header/header";
 import { FaceSnapsService } from '../services/face-snaps-service';
 
 @Component({
   selector: 'app-face-snap-list',
-  imports: [Footer, FaceSnapComponent, Header],
+  imports: [Footer, FaceSnapComponent],
   templateUrl: './face-snap-list.html',
   styleUrl: './face-snap-list.css'
 })

@@ -36,19 +36,16 @@ export class FaceSnapsService {
       return [...this.faceSnaps];
     }
 
-    snapFaceSnapById(faceSnapId:string, snapType:SnapType):void{
+    getFaceSnapById(faceSnapId:string):FaceSnap{
       const foundSnap:FaceSnap|undefined = this.faceSnaps.find((faceSnap : FaceSnap) => faceSnap.id === faceSnapId);
       if(!foundSnap){
         throw new Error("Snap non trouvé");
       }
-      foundSnap.snap(snapType);
+      return foundSnap;
     }
 
-    // unsnapFaceSnapById(faceSnapId: string): void {
-    // const foundSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
-    // if (!foundSnap) {
-    //   throw new Error('FaceSnap not found!');
-    // }
-    // foundSnap.removeSnaps();
-// }
+    snapFaceSnapById(faceSnapId:string, snapType:SnapType):void{
+      const faceSnap:FaceSnap|undefined = this.getFaceSnapById(faceSnapId);
+      faceSnap.snap(snapType);
+    }
 }
